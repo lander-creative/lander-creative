@@ -51,12 +51,12 @@
             class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
             <a href="/" class="hover:text-primary">Beranda</a>
             <a href="#layanan" class="hover:text-primary">Layanan</a>
-            <a href="#portfolio" class="hover:text-primary">Portofolio</a>
+            <a href="#portofolio" class="hover:text-primary">Portofolio</a>
             <a href="#harga" class="hover:text-primary">Harga</a>
             <a href="#kontak" class="hover:text-primary">Kontak</a>
             <button id="closeMenu"
                 class="absolute top-6 right-6 aspect-square size-10 p-1 items-center justify-center bg-primary hover:bg-secondary transition text-white rounded-md flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-x-icon lucide-x">
                     <path d="M18 6 6 18" />
@@ -70,7 +70,7 @@
                 Konsultasi Sekarang
             </button>
             <button id="openMenu" class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-menu-icon lucide-menu">
                     <path d="M4 12h16" />
@@ -83,13 +83,13 @@
 
     <div
         class="flex flex-col items-center justify-center text-center bg-[url('/assets/hero-section-dot-image.webp')] bg-cover bg-no-repeat px-6">
-        <a href="#" class="flex items-center gap-2 rounded-full p-1 pr-3 lg:mt-44 mt-24 text-primary bg-indigo-50">
+        <a href="#harga" class="flex items-center gap-2 rounded-full p-1 pr-3 lg:mt-44 mt-24 text-primary bg-indigo-50">
             <span class="bg-primary text-white text-xs px-3.5 py-1 rounded-full">
                 NEW
             </span>
             <p class="flex items-center gap-1 text-sm">
                 <span>Paket Hemat 50% dengan Domain Pilihan Kamu</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24" fill="none"
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-chevron-right-icon lucide-chevron-right">
                     <path d="m9 18 6-6-6-6" />
@@ -109,7 +109,7 @@
         <div class="flex flex-col sm:flex-row items-center gap-4 mt-6 w-full max-w-md">
             <button onclick="window.open('https\:\/\/wa.me/6282394263103', '_blank')"
                 class="bg-primary hover:bg-secondary transition px-8 py-3 rounded-md text-white w-full sm:w-auto flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-message-square">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -167,7 +167,7 @@
         </div>
     </div>
 
-    <h2 id="harga" class="text-center uppercase font-medium text-primary pt-28" data-aos="fade-up">HARGA</h2>
+    <h2 id="harga" class="text-center uppercase font-medium text-primary pt-28" data-aos="fade-in">HARGA</h2>
     <h3 class="text-3xl font-semibold text-center mx-auto mt-2 px-6" data-aos="fade-up" data-aos-delay="100">Paket
         Terjangkau untuk Setiap Bisnis</h3>
     <p class="text-sm text-slate-500 text-center mt-4 max-w-lg mx-auto px-6" data-aos="fade-up" data-aos-delay="200">
@@ -494,7 +494,7 @@
                             <a href="#layanan" class="hover:text-primary transition">Layanan Kami</a>
                         </li>
                         <li>
-                            <a href="#portfolio" class="hover:text-primary transition">Portofolio</a>
+                            <a href="#portofolio" class="hover:text-primary transition">Portofolio</a>
                         </li>
                         <li>
                             <a href="#harga" class="hover:text-primary transition">Paket Harga</a>
@@ -530,45 +530,30 @@
         </p>
     </footer>
 
-    <script src="/script.js"></script>
-
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Pilih semua elemen yang ingin dianimasikan
             const elementsToAnimate = document.querySelectorAll('[data-aos]');
 
-            // 2. Siapkan opsi untuk observer
-            // Ini meniru 'offset: 100' dan 'once: true' dari pengaturan AOS Anda
             const observerOptions = {
-            root: null, // Menggunakan viewport browser
-            rootMargin: '0px 0px -100px 0px', // Memicu 100px SEBELUM elemen sepenuhnya di layar
-            threshold: 0 // Memicu segera setelah bagian pertama elemen masuk
+            root: null,
+            rootMargin: '0px 0px -100px 0px',
+            threshold: 0
             };
 
-            // 3. Buat fungsi callback yang akan dijalankan
             const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
-                // Jika elemennya ada di dalam viewport (sesuai rootMargin)
                 if (entry.isIntersecting) {
-                
-                // Ambil delay dari 'data-aos-delay'
-                const delay = entry.target.getAttribute('data-aos-delay');
-                
-                if (delay) {
-                    // Terapkan delay sebagai inline style
-                    entry.target.style.transitionDelay = `${delay}ms`;
-                }
-
-                // Tambahkan class .is-visible untuk memicu animasi CSS
-                entry.target.classList.add('is-visible');
-                
-                // Berhenti mengamati elemen ini (ini meniru 'once: true')
-                observer.unobserve(entry.target);
+                    const delay = entry.target.getAttribute('data-aos-delay');
+                    if (delay) {
+                        entry.target.style.transitionDelay = `${delay}ms`;
+                    }
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
                 }
             });
             };
 
-            // 4. Buat dan aktifkan observer
             const observer = new IntersectionObserver(observerCallback, observerOptions);
             elementsToAnimate.forEach(el => {
             observer.observe(el);
